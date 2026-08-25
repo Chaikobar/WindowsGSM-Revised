@@ -1,0 +1,79 @@
+Following Errors from the Original Repository Projectfile are fixed
+
+
+The "Newtonsoft.Json" package version 12.0.3 has a known high-severity security vulnerability: https://github.com/advisories/GHSA-5crp-9r3c-p9vr.
+"ServerConfig" does not contain a definition for "ServerScenario", and no accessible extension method "ServerScenario" accepting a first argument of type "ServerConfig" could be found 
+(are you missing a using directive or an assembly reference?).
+
+"ServerConfig" does not contain a definition for "ServerScenario", and no accessible extension method "ServerScenario" accepting a first argument of type "ServerConfig" could be found 
+(are you missing a using directive or an assembly reference?).
+
+"ServerConfig" does not contain a definition for "ServerAdditional", and no accessible extension method "ServerAdditional" accepting a first argument of type "ServerConfig" could be found 
+(are you missing a using directive or an assembly reference?).
+
+"ServerConfig" does not contain a definition for "ServerAdditional", and no accessible extension method "ServerAdditional" accepting a first argument of type "ServerConfig" could be found 
+(are you missing a using directive or an assembly reference?).
+
+The explicit binding redirect for "Newtonsoft.Json, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" conflicts with an automatically generated binding redirect. 
+Remove it from the application configuration file if necessary, or disable automatically generated binding redirects. 
+
+The build replaces the binding redirect with the following: "<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />". 
+The field "Bot._dashboardTextChannel" is never assigned a value and always retains its default value of "null".
+
+The variable "e" is declared but never used.
+The field "ARKSE.Notice" is never assigned a value and always retains its default value of "null".
+The field "AVORION.Notice" is never assigned a value and always retains its default value of "null".
+The field "CE.Notice" is never assigned a value and always retains its default value of "null".
+The field "ECO.Notice" is never assigned a value and always retains its default value of "null".
+The field "HEAT.Notice" is never assigned a value and always retains its default value of "null".
+The field "INSS.Notice" is never assigned a value and always retains its default value of "null".
+The field "MCBE.Notice" is never assigned a value and always retains its default value of "null".
+The field "MCPE.Notice" is never assigned a value and always retains its default value of "null".
+The field "OLOW.Notice" is never assigned a value and always retains its default value of "null".
+The field "ROK.Notice" is never assigned a value and always retains its default value of "null".
+The field "ROR2.Notice" is never assigned a value and always retains its default value of "null".
+The field "UNT.Notice" is never assigned a value and always retains its default value of "null".
+The field "VTS.Notice" is never assigned a value and always retains its default value of "null".
+
+The package "SharpZipLib" 1.2.0 has a known security vulnerability of moderate severity: https://github.com/advisories/GHSA-mm6g-mmq6-53ff. 
+The "SharpZipLib" 1.2.0 package has a known high-severity security vulnerability: https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deutsch
+
+Das Paket "Newtonsoft.Json" 12.0.3 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-5crp-9r3c-p9vr.
+"ServerConfig" enthält keine Definition für "ServerScenario", und es konnte keine zugängliche ServerScenario-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+
+"ServerConfig" enthält keine Definition für "ServerScenario", und es konnte keine zugängliche ServerScenario-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+
+"ServerConfig" enthält keine Definition für "ServerAdditional", und es konnte keine zugängliche ServerAdditional-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+
+"ServerConfig" enthält keine Definition für "ServerAdditional", und es konnte keine zugängliche ServerAdditional-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+
+Die explizite Bindungsumleitung für "Newtonsoft.Json, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" verursacht einen Konflikt mit einer automatisch generierten Bindungsumleitung. 
+Entfernen Sie diese ggf. aus der Anwendungskonfigurationsdatei, oder deaktivieren Sie automatisch generierte Bindungsumleitungen. 
+Im Build wird die Bindungsumleitung durch Folgendes ersetzt: "<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />".
+
+Dem Feld "Bot._dashboardTextChannel" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Die Variable "e" ist deklariert, wird aber nie verwendet.
+Dem Feld "ARKSE.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "AVORION.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "CE.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "ECO.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "HEAT.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "INSS.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "MCBE.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "MCPE.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "OLOW.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "ROK.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "ROR2.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "UNT.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Dem Feld "VTS.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
+Das Paket "SharpZipLib" 1.2.0 weist eine bekannte moderate Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-mm6g-mmq6-53ff.
+Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
