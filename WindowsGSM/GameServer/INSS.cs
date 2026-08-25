@@ -12,16 +12,32 @@ namespace WindowsGSM.GameServer
         public string Notice;
 
         public const string FullName = "Insurgency: Sandstorm Dedicated Server";
-        public string StartPath = @"Insurgency\Binaries\Win64\InsurgencyServer-Win64-Shipping.exe";
-        public bool AllowsEmbedConsole = true;
-        public int PortIncrements = 2;
-        public dynamic QueryMethod = new Query.A2S();
 
+        // Correct starting path
+        public string StartPath = @"Insurgency\Binaries\Win64\InsurgencyServer-Win64-Shipping.exe";
+
+        public bool AllowsEmbedConsole = true;
+
+        // Sandstorm using UT3 Query
+        public int PortIncrements = 2;
+        public dynamic QueryMethod = new Query.UT3();
+
+        // StandardValues
         public string Port = "27102";
         public string QueryPort = "27131";
-        public string Defaultmap = "Oilfield";
+        public string Defaultmap = "Farmhouse";
         public string Maxplayers = "28";
-        public string Additional = "?Scenario=Scenario_Refinery_Push_Security";
+
+        // Default Scenario
+        public string DefaultScenario = "Scenario_Farmhouse_Frontline";
+
+        // Mutators (Default is empty)
+        public string DefaultMutators = "";
+
+        // Tokens (optional)
+        public string SecurityCode = "";
+        public string GameStatsToken = "";
+        public string GSLTToken = "";
 
         public string AppId = "581330";
 
@@ -32,35 +48,86 @@ namespace WindowsGSM.GameServer
 
         public async void CreateServerCFG()
         {
-            // No config file need to download
+            // Sandstorm no needs CFG-Files
         }
 
         public async Task<Process> Start()
         {
-            string shipExePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, StartPath);
-            if (!File.Exists(shipExePath))
+            string exePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, StartPath);
+
+            if (!File.Exists(exePath))
             {
-                Error = $"{Path.GetFileName(shipExePath)} not found ({shipExePath})";
+                Error = $"{Path.GetFileName(exePath)} not found ({exePath})";
                 return null;
             }
 
-            string param = string.IsNullOrWhiteSpace(_serverData.ServerMap) ? string.Empty : _serverData.ServerMap;
-            param += $"{_serverData.ServerParam}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $"?MaxPlayers={_serverData.ServerMaxPlayer}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -Port={_serverData.ServerPort}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerQueryPort) ? string.Empty : $" -QueryPort={_serverData.ServerQueryPort}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerIP) ? string.Empty : $" -MultiHome={_serverData.ServerIP}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerName) ? string.Empty : $" -hostname={_serverData.ServerName}";
-            param += !AllowsEmbedConsole ? " -log" : string.Empty;
+            // -----------------------------
+            // PARAMETER ENGINE
+            // -----------------------------
+
+            string map = string.IsNullOrWhiteSpace(_serverData.ServerMap)
+                ? Defaultmap
+                : _serverData.ServerMap;
+
+            string scenario = string.IsNullOrWhiteSpace(_serverData.ServerScenario)
+                ? DefaultScenario
+                : _serverData.ServerScenario;
+
+            string mutators = string.IsNullOrWhiteSpace(_serverData.ServerAdditional)
+                ? DefaultMutators
+                : _serverData.ServerAdditional;
+
+            string param = $"{map}?Scenario={scenario}";
+
+            if (!string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer))
+                param += $"?MaxPlayers={_serverData.ServerMaxPlayer}";
+            else
+                param += $"?MaxPlayers={Maxplayers}";
+
+            if (!string.IsNullOrWhiteSpace(mutators))
+                param += $"?Mutators={mutators}";
+
+            // Ports
+            param += $" -Port={_serverData.ServerPort}";
+            param += $" -QueryPort={_serverData.ServerQueryPort}";
+
+            // MultiHome
+            if (!string.IsNullOrWhiteSpace(_serverData.ServerIP))
+                param += $" -MultiHome={_serverData.ServerIP}";
+
+            // Hostname
+            if (!string.IsNullOrWhiteSpace(_serverData.ServerName))
+                param += $" -hostname=\"{_serverData.ServerName}\"";
+
+            // Tokens
+            if (!string.IsNullOrWhiteSpace(SecurityCode))
+                param += $" -SecurityCode={SecurityCode}";
+
+            if (!string.IsNullOrWhiteSpace(GameStatsToken))
+                param += $" -GameStatsToken={GameStatsToken}";
+
+            if (!string.IsNullOrWhiteSpace(GSLTToken))
+                param += $" -GSLTToken={GSLTToken}";
+
+            // Logging
+            param += " -log";
+
+            // Mods
+            param += " -mods";
+
+            // -----------------------------
+            // PROCESS START
+            // -----------------------------
 
             Process p;
+
             if (!AllowsEmbedConsole)
             {
                 p = new Process
                 {
                     StartInfo =
                     {
-                        FileName = shipExePath,
+                        FileName = exePath,
                         Arguments = param,
                         WindowStyle = ProcessWindowStyle.Minimized,
                         UseShellExecute = false
@@ -75,7 +142,7 @@ namespace WindowsGSM.GameServer
                 {
                     StartInfo =
                     {
-                        FileName = shipExePath,
+                        FileName = exePath,
                         Arguments = param,
                         WindowStyle = ProcessWindowStyle.Hidden,
                         CreateNoWindow = true,
@@ -85,9 +152,11 @@ namespace WindowsGSM.GameServer
                     },
                     EnableRaisingEvents = true
                 };
+
                 var serverConsole = new Functions.ServerConsole(_serverData.ServerID);
                 p.OutputDataReceived += serverConsole.AddOutput;
                 p.ErrorDataReceived += serverConsole.AddOutput;
+
                 p.Start();
                 p.BeginOutputReadLine();
                 p.BeginErrorReadLine();
@@ -101,13 +170,9 @@ namespace WindowsGSM.GameServer
             await Task.Run(() =>
             {
                 if (p.StartInfo.CreateNoWindow)
-                {
                     p.Kill();
-                }
                 else
-                {
                     p.CloseMainWindow();
-                }
             });
         }
 
@@ -116,7 +181,6 @@ namespace WindowsGSM.GameServer
             var steamCMD = new Installer.SteamCMD();
             Process p = await steamCMD.Install(_serverData.ServerID, string.Empty, AppId);
             Error = steamCMD.Error;
-
             return p;
         }
 
@@ -129,12 +193,17 @@ namespace WindowsGSM.GameServer
 
         public bool IsInstallValid()
         {
-            return File.Exists(Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, "InsurgencyServer.exe"));
+            return File.Exists(
+                Functions.ServerPath.GetServersServerFiles(
+                    _serverData.ServerID,
+                    StartPath
+                )
+            );
         }
 
         public bool IsImportValid(string path)
         {
-            string exePath = Path.Combine(path, "InsurgencyServer.exe");
+            string exePath = Path.Combine(path, @"Insurgency\Binaries\Win64\InsurgencyServer-Win64-Shipping.exe");
             Error = $"Invalid Path! Fail to find {Path.GetFileName(exePath)}";
             return File.Exists(exePath);
         }
