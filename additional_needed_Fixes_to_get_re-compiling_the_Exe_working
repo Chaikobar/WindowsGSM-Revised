@@ -39,6 +39,9 @@ The package "SharpZipLib" 1.2.0 has a known security vulnerability of moderate s
 The "SharpZipLib" 1.2.0 package has a known high-severity security vulnerability: https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
 
 
+needet Nugget Packages are updated to the last compatible PackageVersion
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Deutsch
@@ -77,3 +80,5 @@ Dem Feld "UNT.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standar
 Dem Feld "VTS.Notice" wird nie etwas zugewiesen, und es hat immer seinen Standardwert von "null".
 Das Paket "SharpZipLib" 1.2.0 weist eine bekannte moderate Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-mm6g-mmq6-53ff.
 Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
+
+Benötigte Nugget Packages wurden auf aktuellere, als kompatibel deklarierte, Versionen geupdated
