@@ -35,7 +35,7 @@ WindowsGSM is a powerful tool to manage game servers. Equipped with a GUI for se
 | ![logo](WindowsGSM/Images/Games/hlof.png?raw=true)   | Half-Life: Opposing Force Dedicated Server        |✅| A2S  |
 | ![logo](WindowsGSM/Images/Games/heat.png?raw=true)   | Heat Dedicated Server                             |✅|      |
 | ![logo](WindowsGSM/Images/Games/ins.png?raw=true)    | Insurgency Dedicated Server                       |✅| A2S  |
-| ![logo](WindowsGSM/Images/Games/inss.png?raw=true)   | Insurgency: Sandstorm Dedicated Server &nbsp;&nbsp;&nbsp; Reworked and new Parameters added   |✅| A2S  |
+| ![logo](WindowsGSM/Images/Games/inss.png?raw=true)   | Insurgency: Sandstorm Dedicated Server &nbsp;&nbsp;&nbsp; -Reworked and new Parameters added   |✅| A2S  |
 | ![logo](WindowsGSM/Images/Games/l4d2.png?raw=true)   | Left 4 Dead 2 Dedicated Server                    |✅| A2S  |
 | ![logo](WindowsGSM/Images/Games/mcbe.png?raw=true)   | Minecraft: Bedrock Edition Server                 |✅|      |
 | ![logo](WindowsGSM/Images/Games/mc.png?raw=true)     | Minecraft: Java Edition Server                    |✅| UT3  |
@@ -112,7 +112,7 @@ Allow support more game servers by installing plugins!
   * **Deathreus** - *Code optimization* - [Deathreus](https://github.com/Deathreus)
   * **! AssaultLine** - *Mordhau server test*
   * **Dennis** - *Mordhau server test*
-  * **Chaikobar** - *Developer of the revised, updated, and fixed version of WindowsGSM* (Under MIT Licence) &nbsp;&nbsp;- [Chaikobar](https://github.com/Chaikobar)
+  * **Chaikobar** - *Developer of the revised, updated, and fixed version of WindowsGSM* (Under MIT Licence) - [Chaikobar](https://github.com/Chaikobar)
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/WindowsGSM/WindowsGSM/blob/master/LICENSE) file for details
