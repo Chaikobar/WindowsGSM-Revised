@@ -10,41 +10,29 @@ Fixed errors that prevented all attempts to compile the application .exe in Visu
 
 The "Newtonsoft.Json" package version 12.0.3 has a known high-severity security vulnerability: https://github.com/advisories/GHSA-5crp-9r3c-p9vr.
 "ServerConfig" does not contain a definition for "ServerScenario", and no accessible extension method "ServerScenario" accepting a first argument of type "ServerConfig" could be found 
-(are you missing a using directive or an assembly reference?).
+(are you missing a using directive or an assembly reference?).   (*Fixed*)
 
 "ServerConfig" does not contain a definition for "ServerScenario", and no accessible extension method "ServerScenario" accepting a first argument of type "ServerConfig" could be found 
-(are you missing a using directive or an assembly reference?).
+(are you missing a using directive or an assembly reference?).   (*Fixed*)
 
 "ServerConfig" does not contain a definition for "ServerAdditional", and no accessible extension method "ServerAdditional" accepting a first argument of type "ServerConfig" could be found 
-(are you missing a using directive or an assembly reference?).
+(are you missing a using directive or an assembly reference?).   (*Fixed*)
 
 "ServerConfig" does not contain a definition for "ServerAdditional", and no accessible extension method "ServerAdditional" accepting a first argument of type "ServerConfig" could be found 
-(are you missing a using directive or an assembly reference?).
+(are you missing a using directive or an assembly reference?).   (*Fixed*)
 
 The explicit binding redirect for "Newtonsoft.Json, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" conflicts with an automatically generated binding redirect. 
 Remove it from the application configuration file if necessary, or disable automatically generated binding redirects. 
-
 The build replaces the binding redirect with the following: "<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />". 
-The field "Bot._dashboardTextChannel" is never assigned a value and always retains its default value of "null".
+The field "Bot._dashboardTextChannel" is never assigned a value and always retains its default value of "null".  (*Binding korrigiert*)
 
-The package "SharpZipLib" 1.2.0 has a known security vulnerability of moderate severity: https://github.com/advisories/GHSA-mm6g-mmq6-53ff. 
-The "SharpZipLib" 1.2.0 package has a known high-severity security vulnerability: https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
+The package "SharpZipLib" 1.2.0 has a known security vulnerability of moderate severity: https://github.com/advisories/GHSA-mm6g-mmq6-53ff.  (*Fixed with a updated Package Version*) 
+The "SharpZipLib" 1.2.0 package has a known high-severity security vulnerability: https://github.com/advisories/GHSA-m22m-h4rf-pwq3.  (*Fixed with a updated Package Version*)
 
 needed Nugget Packages are updated to the last compatible PackageVersion
 
 
-Project file (csproj) corrected:  
-Missing GameServer classes were added back into the build:
-→ CSGO.cs
-→ GMOD.cs
-→ MCPE.cs
-→ RUST.cs
-→ TF2.cs
-
-Cause:  
-The files existed in the repository but were not included in the Compile ItemGroup.
-
-Additionally:  
+Project file (csproj) corrected:
 Version references were corrected to the package versions that actually exist in the packages folder.
 
 
@@ -82,38 +70,28 @@ Fehler behoben, die sämtliche Versuche verhinderten, die Anwendungs-.exe in Vis
 
 Das Paket "Newtonsoft.Json" 12.0.3 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-5crp-9r3c-p9vr.
 "ServerConfig" enthält keine Definition für "ServerScenario", und es konnte keine zugängliche ServerScenario-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
-(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).   (*Fixed*)
 
 "ServerConfig" enthält keine Definition für "ServerScenario", und es konnte keine zugängliche ServerScenario-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
-(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).   (*Fixed*)
 
 "ServerConfig" enthält keine Definition für "ServerAdditional", und es konnte keine zugängliche ServerAdditional-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
-(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).   (*Fixed*)
 
 "ServerConfig" enthält keine Definition für "ServerAdditional", und es konnte keine zugängliche ServerAdditional-Erweiterungsmethode gefunden werden, die ein erstes Argument vom Typ "ServerConfig" akzeptiert 
-(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).
+(möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).   (*Fixed*)
 
 Die explizite Bindungsumleitung für "Newtonsoft.Json, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" verursacht einen Konflikt mit einer automatisch generierten Bindungsumleitung. 
 Entfernen Sie diese ggf. aus der Anwendungskonfigurationsdatei, oder deaktivieren Sie automatisch generierte Bindungsumleitungen. 
-Im Build wird die Bindungsumleitung durch Folgendes ersetzt: "<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />".
+Im Build wird die Bindungsumleitung durch Folgendes ersetzt: "<bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />".  (*Binding korrigiert*)
 
-Das Paket "SharpZipLib" 1.2.0 weist eine bekannte moderate Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-mm6g-mmq6-53ff.
-Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
+Das Paket "SharpZipLib" 1.2.0 weist eine bekannte moderate Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-mm6g-mmq6-53ff.  (*Fixed with a updated Package Version*)
+Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-m22m-h4rf-pwq3.  (*Fixed with a updated Package Version*)
 
 Benötigte Nugget Packages wurden auf aktuellere, als kompatibel deklarierte, Versionen geupdated
 
 
 Projektdatei (csproj) korrigiert:
-fehlende GameServer‑Klassen wurden wieder in den Build aufgenommen
-→ CSGO.cs
-→ GMOD.cs
-→ MCPE.cs
-→ RUST.cs
-→ TF2.cs
-
-Ursache: Dateien waren im Repository vorhanden, aber nicht im Compile‑ItemGroup eingetragen
-
-zusätzlich:
 Versions Verweise wurden auf die korrekten im Packages Ordner existierenden Packageversionen korrigiert
 
 
