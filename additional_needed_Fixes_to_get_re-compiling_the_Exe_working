@@ -33,6 +33,22 @@ The "SharpZipLib" 1.2.0 package has a known high-severity security vulnerability
 needed Nugget Packages are updated to the last compatible PackageVersion
 
 
+Project file (csproj) corrected:  
+Missing GameServer classes were added back into the build:
+→ CSGO.cs
+→ GMOD.cs
+→ MCPE.cs
+→ RUST.cs
+→ TF2.cs
+
+Cause:  
+The files existed in the repository but were not included in the Compile ItemGroup.
+
+Additionally:  
+Version references were corrected to the package versions that actually exist in the packages folder.
+
+
+
 *Not yet fixed, but non-critical and does not affect functionality*
 *** The variable "e" is declared but never used. ***
 *** The field "ARKSE.Notice" is never assigned a value and always retains its default value of "null". ***
@@ -85,6 +101,21 @@ Das Paket "SharpZipLib" 1.2.0 weist eine bekannte moderate Schweregrad-Sicherhei
 Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsanfälligkeit auf, https://github.com/advisories/GHSA-m22m-h4rf-pwq3.
 
 Benötigte Nugget Packages wurden auf aktuellere, als kompatibel deklarierte, Versionen geupdated
+
+
+Projektdatei (csproj) korrigiert:
+fehlende GameServer‑Klassen wurden wieder in den Build aufgenommen
+→ CSGO.cs
+→ GMOD.cs
+→ MCPE.cs
+→ RUST.cs
+→ TF2.cs
+
+Ursache: Dateien waren im Repository vorhanden, aber nicht im Compile‑ItemGroup eingetragen
+
+zusätzlich:
+Versions Verweise wurden auf die korrekten im Packages Ordner existierenden Packageversionen korrigiert
+
 
 
 *Noch nicht gefixt, aber unkritisch und stören die Funktionsfähigkeit nicht*
