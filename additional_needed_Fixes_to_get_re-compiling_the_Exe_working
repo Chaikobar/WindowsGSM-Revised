@@ -35,6 +35,18 @@ needed Nugget Packages are updated to the last compatible PackageVersion
 Project file (csproj) corrected:
 Version references were corrected to the package versions that actually exist in the packages folder.
 
+Added new Community-created  Server-plugins
+
+
+
+Every ServerConfig plugin that containing a [strong]Launch.bat[/strong] has undergone minor adjustments. 
+The [strong]Launch.bat[/strong] file has been integrated into the [strong].cs[/strong] plugin file itself, 
+ensuring that the [strong]Launch.bat[/strong] is created on the desktop only, when the plugin is loaded.
+
+Admittedly, I underestimated the effort involved a bit :D but I'm making reasonably good progress.
+
+
+
 
 
 *Not yet fixed, but non-critical and does not affect functionality*
@@ -91,8 +103,20 @@ Das Paket "SharpZipLib" 1.2.0 weist eine bekannte high Schweregrad-Sicherheitsan
 Benötigte Nugget Packages wurden auf aktuellere, als kompatibel deklarierte, Versionen geupdated
 
 
-Projektdatei (csproj) korrigiert:
+Projektdatei (.csproj) korrigiert:
 Versions Verweise wurden auf die korrekten im Packages Ordner existierenden Packageversionen korrigiert
+
+
+Neue Community-erstellten Plugins hinzugefügt (Eine ausführliche Liste folgt in Kürze)
+
+
+Jedes ServerConfig-Plugin, das einen [strong].bat-Launcher[/strong] enthält, wurde geringfügig angepasst. 
+Die Datei [strong]Launch.bat[/strong] wurde direkt in die [strong].cs[/strong]-Plugin-Datei integriert, 
+sodass die [strong]Launch.bat[/strong] erst beim Laden des Plugins auf dem Desktop erstellt wird.
+
+
+Zugegeben ich habe den Aufwand etwas unterschätzt :D komme aber einigermaßen gut voran.
+
 
 
 
